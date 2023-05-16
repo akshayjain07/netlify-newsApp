@@ -45,7 +45,7 @@ export class Navbar extends Component {
                 <a className="nav-link" href="/about">Sports</a>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="/about">Share Bazaar</a>
+                <a className="nav-link" href="/about">UPSC99</a>
                 </li>
             </ul>
             </div>
