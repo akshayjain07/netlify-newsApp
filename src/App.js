@@ -2,35 +2,29 @@
 import './App.css';
 
 import React, { Component } from 'react'
-import Navbar from './Components/NavBar';
+import NavBar from './Components/NavBar';
 import News from './Components/News';
 
 export default class App extends Component {
-
-  // constructor() {
-  //   super();
-  //   console.log("I am Akshay Jain");
+  // constructor(props) {
+  //   super(props);
   //   this.state = {
-  //     mode: "light"
+  //     urlPart: 'random'
   //   };
   // }
-  
-  // handleMode = () => {
-  //   document.body.classList.remove('bg-light');
-  //   document.body.classList.remove('bg-dark');
-  //   const newMode = this.state.mode === 'light' ? 'dark' : 'light';
-  //   document.body.classList.add('bg-' + newMode);
-  //   console.log(newMode);
-  //   this.setState({
-  //     mode: newMode
-  //   });
-  // };  
+  // handleButtonClick = (newUrlPart) => {
+  //   this.setState({ urlPart: newUrlPart });
+  // };
+
 
   render() {
+    // const { urlPart } = this.state;
     return (
       <div>
-        <Navbar/>
+        <NavBar/>
+        {/* <NavBar onClick={this.handleButtonClick}/> */}
         <News/>
+        {/* <News urlPart={urlPart}/> */}
       </div>
     )
   }
