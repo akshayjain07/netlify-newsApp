@@ -23,7 +23,8 @@ export default class App extends Component {
       <div>
         <NavBar/>
         {/* <NavBar onClick={this.handleButtonClick}/> */}
-        <News/>
+        {/* <News/> */}
+        <News pageSize={12} />
         {/* <News urlPart={urlPart}/> */}
       </div>
     )
