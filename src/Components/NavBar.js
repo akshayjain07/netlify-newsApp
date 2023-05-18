@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Link} from "react-router-dom";
+
 
 export class NavBar extends Component {
 
@@ -27,23 +29,32 @@ export class NavBar extends Component {
       <div>
         <nav className={`navbar navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode} bg-body-${this.state.mode}`}>
         <div className="container-fluid">
-            <a className="navbar-brand" href="#">News Monkey</a>
+            <Link className="navbar-brand" to="/">News Monkey</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href='#' onClick={() => console.log("home")}>Home</a>
+                  <Link className="nav-link" aria-current="page" to='/' onClick={() => console.log("home")}>Home</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href='#' onClick={() => console.log("politics")}>Politics</a>
+                  <Link className="nav-link" aria-current="page" to='/business' onClick={() => console.log("business")}>Business</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href='#' onClick={() => console.log("UPSC")}>UPSC99</a>
+                  <Link className="nav-link" aria-current="page" to='/entertainment' onClick={() => console.log("entertainment")}>Entertainment</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href='#' onClick={() => console.log("sports")}>Sports</a>
+                  <Link className="nav-link" aria-current="page" to='/health' onClick={() => console.log("health")}>Health</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to='/science' onClick={() => console.log("science")}>Science</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to='/sports' onClick={() => console.log("sports")}>sports</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to='/technology' onClick={() => console.log("technology")}>Technology</Link>
                 </li>
             </ul>
             </div>

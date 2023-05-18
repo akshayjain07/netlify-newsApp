@@ -1,8 +1,22 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
-import Spinner from './Spinner';
+import Spinner from './Spinner'
+import PropTypes from 'prop-types'
+
 
 export class News extends Component {
+
+  static defaultProps = {
+    country:'in',
+    pageSize:8,
+    category:'general'
+  }
+  static propTypes = {
+    country:PropTypes.string,
+    pageSize:PropTypes.number,
+    category:PropTypes.string
+  }
+
   constructor(){
     super();
     console.log("I am Akshay Jain");
@@ -17,7 +31,7 @@ export class News extends Component {
     try {
       console.log("cdm");
       // let url = `https://newsapi.org/v2/everything?q=${this.props.urlPart}&apiKey=0575a11efd8b4197bb308b6b28458716&page=1&pageSize=${this.props.pageSize}`;
-      let url = `https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=1&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0575a11efd8b4197bb308b6b28458716&page=1&pageSize=${this.props.pageSize}`;
       // let url = "https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=1&pageSize=9";
       this.setState({loading:true});
       let data = await fetch(url);
@@ -35,7 +49,7 @@ export class News extends Component {
     try {
       console.log("pre");
       // let url = `https://newsapi.org/v2/everything?q=${this.props.urlPart}&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
-      let url = `https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
       // let url = `https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page-1}&pageSize=9`;
       this.setState({loading:true});
       let data = await fetch(url);
@@ -59,7 +73,7 @@ export class News extends Component {
               
             }else{
               // let url = `https://newsapi.org/v2/everything?q=${this.props.urlPart}&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-              let url = `https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+              let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
               // let url = `https://newsapi.org/v2/everything?q=random&apiKey=0575a11efd8b4197bb308b6b28458716&page=${this.state.page + 1}&pageSize=9`;
               this.setState({loading:true});
               let data = await fetch(url);
